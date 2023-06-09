@@ -12,6 +12,10 @@ spec:
           name: game-demo
     ports:
     - containerPort: 80
+
+    volumeMounts:
+      - name: config-as-volume
+        mountPath: /home
   - name: postgres
     image: postgres
     envFrom:
@@ -21,3 +25,11 @@ spec:
           name: postgres-secret
     ports:
     - containerPort: 5432
+  volumes:
+    - name: config-as-volume
+      configMap:
+        name: game-demo
+        items:
+        - key: game.properties
+          path: myconfigmapmount
+
