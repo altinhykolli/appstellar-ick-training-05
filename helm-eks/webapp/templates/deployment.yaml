@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{.Values.deploymentName}}
+  namespace: {{.Values.namespace}}
+  labels:
+    app: nginx
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.16.1
+        envFrom:
+          - configMapRef:
+              name: {{.Values.configMapname}}
+          - secretRef:
+              name: {{.Values.secretName}}
+        ports:
+        - containerPort: 80

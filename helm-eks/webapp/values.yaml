@@ -1,0 +1,4 @@
+namespace     : webapp-altin
+configMapname : db-configmap
+secretName    : db-secret
+deploymentName : db-deployment
