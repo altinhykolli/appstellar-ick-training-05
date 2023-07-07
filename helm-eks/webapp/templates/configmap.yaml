@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: {{ .Values.configMapname }}
-  namespace: {{.Values.namespace}}
+  namespace: {{ .Values.namespace }}
 data:
   # property-like keys; each key maps to a simple value
   DB_HOSTNAME: "db.hostname"

@@ -1,8 +1,8 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{.Values.deploymentName}}
-  namespace: {{.Values.namespace}}
+  name: {{ .Values.deploymentName }}
+  namespace: {{ .Values.namespace }}
   labels:
     app: nginx
 spec:
@@ -20,8 +20,8 @@ spec:
         image: nginx:1.16.1
         envFrom:
           - configMapRef:
-              name: {{.Values.configMapname}}
+              name: {{ .Values.configMapname }}
           - secretRef:
-              name: {{.Values.secretName}}
+              name: {{ .Values.secretName }}
         ports:
-        - containerPort: 80
+        - containerPort: {{ .Values.containerPort }}

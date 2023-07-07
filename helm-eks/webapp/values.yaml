@@ -1,4 +1,11 @@
-namespace     : webapp-altin
+namespace : webapp-altin
 configMapname : db-configmap
-secretName    : db-secret
+secretName : db-secret
 deploymentName : db-deployment
+serviceName : db-service
+servicePort : "80"
+Ingress : altin-ingress
+ingressClassName : alb
+targetPort : "80"
+containerPort : "80"
+host: altin.appstellar.training
