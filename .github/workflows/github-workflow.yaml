@@ -46,5 +46,5 @@ jobs:
       
       - name: Deploy helm Chart
         run: |
-          helm upgrade webapp-altin webapp ../helm-eks/webapp  --install
+          helm upgrade webapp-altin ../helm-eks/webapp  --install
           
