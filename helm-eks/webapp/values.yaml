@@ -6,6 +6,6 @@ serviceName : db-service
 servicePort : "80"
 Ingress : altin-ingress
 ingressClassName : alb
-targetPort : "80"
+targetPort : "3000"
 containerPort : "80"
 host: altin.appstellar.training

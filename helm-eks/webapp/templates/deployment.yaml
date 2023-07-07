@@ -17,7 +17,8 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:1.16.1
+        image: "313422618945.dkr.ecr.eu-central-1.amazonaws.com/altin:dev"
+        name: nextjs
         envFrom:
           - configMapRef:
               name: {{ .Values.configMapname }}
